@@ -32,12 +32,12 @@
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Inicio</a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="destinos.html">Destinos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Destinos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="hospedaje.html">Hospedaje</a>
+                            <a class="nav-link" href="#">Hospedaje</a>
                         </li>
                     </ul>
                     </li>
@@ -52,62 +52,77 @@
     </header>
     <main class="container">
         <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Destinos</li>
-        </ol>
-        </nav>
-        <section class="destinos-grid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Hospedaje</li>
+            </ol>
+            </nav>
+        <div class="container" id="contenedor">
             <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <div class="destino">
-                        <h4>Museo del Prado</h4>
-                        <img src="../media/prado.jpg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
-                    </div>
-                    <div class="destino">
-                        <h4>Puerta del Sol</h4>
-                        <img src="../media/puerta.jpg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
-                    </div>
-                    <div class="destino">
-                        <h4>Plaza Mayor</h4>
-                        <img src="../media/mayor.jpeg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../media/madrid-hotel.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title" id="titleCard1">Madrid</h5>
+                    <p class="card-text"><strong>Días:</strong> 7</p>
+                    <p class="card-text"><strong>Fecha:</strong> 24/11/2024</p>
+                    <p class="card-text"><strong>Hotel:</strong> Hilton Hotel</p>
+                    <p class="card-text precio">U$D 13.000</p>
+                    <a href="#agregarPersonas" class="btn btn-primary"  id="boton-reserva1">Reserva</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="destino">
-                        <h4>El Retiro</h4>
-                        <img src="../media/retiro.jpg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../media/toledo-hotel.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Toledo</h5>
+                    <p class="card-text"><strong>Días:</strong> 10</p>
+                    <p class="card-text"><strong>Fecha:</strong> 14/03/2024</p>
+                    <p class="card-text"><strong>Hotel:</strong> Nuestro Camino Hotel</p>
+                    <p class="card-text precio">U$D 6.000</p>
+                    <a href="#agregarPersonas" class="btn btn-primary" id="boton-reserva2">Reserva</a>
                     </div>
-                    <div class="destino">
-                        <h4>Palacio Real</h4>
-                        <img src="../media/palacio.jpeg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../media/aranjuez-hotel.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Aranjuez</h5>
+                    <p class="card-text"><strong>Días:</strong> 10</p>
+                    <p class="card-text"><strong>Fecha:</strong> 12/05/2024</p>
+                    <p class="card-text"><strong>Hotel:</strong> BlueStar Aparts</p>
+                    <p class="card-text precio">U$D 7.000</p>
+                    <a href="#agregarPersonas" class="btn btn-primary" id="boton-reserva3">Reserva</a>
                     </div>
-                    <div class="destino">
-                        <h4>Puerta de Alcalá</h4>
-                        <img src="../media/alcala.jpg" alt="">
-                        <div class="text-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque qui suscipit nemo, incidunt, dicta illum sint officiis, minima excepturi sapiente ipsum rerum voluptate! Deleniti quas consequuntur quae expedita, dolorem excepturi.</p>
-                        </div>
-                    </div>
+                </div>
                 </div>
             </div>
-        </section>
-
+            <div class="row" id="agregarPersonas">
+            <div class="col-md-4" id="formularioReserva">
+                <h3>Agrega personas:</h3>
+                <form class="form-floating mb-3" id="formulario">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nombreInput" placeholder="Nombre" minlength="2" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="apellidoInput" placeholder="Apellido" minlength="2" required>
+                    <label for="apellido">Apellido</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="pasaporteInput" placeholder="Pasaporte" minlength="6" required>
+                    <label for="pasaporte">Pasaporte</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nacionalidadInput" placeholder="Nacionalidad" minlength="2" required>
+                    <label for="nacionalidad">Nacionalidad</label>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Agregar viajero">
+                </form>
+                <input class="btn btn-success mt-4" id="finalizarReserva" type="button" value="Finalizar reserva">
+            </div>
+            <div class="col-md-6">
+                <h3 id="resumenReserva">Resumen:</h3>
+            </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="container">

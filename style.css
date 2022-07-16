@@ -201,10 +201,87 @@
   text-align: center;
   color: white;
   opacity: 0;
-  transition: 0.5s;
+  transition: 1s;
 }
 * main.container .destinos-grid .destino .text-wrap:hover {
   opacity: 1;
+}
+* main.container #contenedor {
+  padding-top: 30px;
+}
+* main.container #contenedor .btn-primary {
+  background-color: #1961AB;
+}
+* main.container #contenedor .btn-primary:hover {
+  background-color: #07335E;
+}
+* main.container #contenedor .row {
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+* main.container #contenedor .row .card {
+  transition: 0.5s;
+  border: none;
+}
+* main.container #contenedor .row .card:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+* main.container #contenedor .row .card img.card-img-top {
+  width: auto;
+  height: 150px;
+  object-fit: cover;
+}
+* main.container #contenedor .row .card .card-body h5 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+* main.container #contenedor .row .card .card-body p.card-text.precio {
+  font-size: 1.75em;
+  font-weight: bold;
+  border-top: 1px dashed gray;
+  padding-top: 5px;
+  text-align: center;
+}
+* main.container #contenedor .row .card .card-body .btn {
+  width: 100%;
+}
+* main.container div#agregarPersonas {
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+* main.container div#agregarPersonas h3 {
+  margin-bottom: 1em;
+  text-align: center;
+}
+* main.container div#agregarPersonas input#finalizarReserva {
+  width: 100%;
+  background-color: #07335E;
+}
+* main.container div#agregarPersonas #resumen {
+  margin: 1em 0;
+  background: linear-gradient(90deg, rgba(7, 51, 94, 0.8) 0%, rgba(25, 97, 171, 0.8) 50%, rgba(255, 255, 255, 0.01) 100%);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+* main.container div#agregarPersonas #resumen h4 {
+  font-size: 0.65em;
+  text-align: left;
+}
+* main.container div#agregarPersonas div#resumenPersonas {
+  padding-bottom: 1em;
+  background: linear-gradient(90deg, rgba(7, 51, 94, 0.3) 0%, rgba(25, 97, 171, 0.2) 33%, rgba(255, 255, 255, 0.01) 100%);
+  padding: 20px;
+  border-radius: 10px;
+  color: #07335E;
+  margin-bottom: 5px;
+}
+* main.container div#agregarPersonas div#resumenPersonas h4 {
+  font-size: 0.5em;
+  text-align: left;
 }
 * main.container .construccion {
   display: flex;
