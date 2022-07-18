@@ -89,7 +89,8 @@ function borrarStorageYDatos(){
         personas = [];
                 
         let bloquesReserva = document.querySelector(".bloques-reserva");
-        resumenReserva.removeChild(bloquesReserva);
+        let encontrarClase = document.contains(bloquesReserva);
+        resumenReserva.remove(encontrarClase);
     });
 }
 
