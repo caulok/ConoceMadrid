@@ -40,7 +40,7 @@ class Persona {
 function creadorDeBloquePersonas(){
     for(i=0 ; i<personas.length ; i++){
         let contenedorResumenPersonas = document.createElement("div");
-        contenedorResumenPersonas.className = "col-md-auto";
+        contenedorResumenPersonas.className = "col-md-auto bloques-reserva";
         contenedorResumenPersonas.id = "resumenPersonas";
         contenedorResumenPersonas.innerHTML = `
             <h4>Persona: <strong>${i + 1}</strong></h4>
@@ -55,7 +55,7 @@ function creadorDeBloquePersonas(){
 
 function creadorDeBloqueReserva(){
     let contenedor = document.createElement("div");
-    contenedor.className = "col-md-auto";
+    contenedor.className = "col-md-auto bloques-reserva";
     contenedor.id = "resumen";
     contenedor.innerHTML = `
         <h4>Hotel: <strong>${reservas[0].paquete[0].hospedaje} (${reservas[0].paquete[0].ubicacion})</strong></h4>
@@ -84,21 +84,14 @@ function borrarStorageYDatos(){
     botonBorrar.addEventListener('click', ()=> {
         localStorage.clear();
 
-        for (let i = reservas.length; i > 0; i--) {
-        reservas.pop();
-        }
-        for (let i = paquetes.length; i > 0; i--) {
-        paquetes.pop();
-        }
-        for (let i = personas.length; i > 0; i--) {
-        personas.pop();
-        }
+        reservas = [];
+        paquetes = [];
+        personas = [];
                 
         let resumenReserva = document.querySelector("#resumenReserva");
-        let resumenDiv = document.querySelector("#resumen");
-        let resumenPersonasDiv = document.querySelector("#resumenPersonas");
-        resumenReserva.removeChild(resumenDiv);
-        resumenReserva.removeChild(resumenPersonasDiv);
+        let bloquesReserva = document.querySelector(".bloques-reserva")
+        let encontrarBloques = document.body.contains(bloquesReserva);  
+        resumenReserva.remove(encontrarBloques)
     });
 }
 

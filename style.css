@@ -274,7 +274,7 @@
   font-size: 0.65em;
   text-align: left;
 }
-* main.container div#agregarPersonas div#resumenPersonas {
+* main.container div#agregarPersonas .bloques-reserva {
   padding-bottom: 1em;
   background: linear-gradient(90deg, rgba(7, 51, 94, 0.3) 0%, rgba(25, 97, 171, 0.2) 33%, rgba(255, 255, 255, 0.01) 100%);
   padding: 20px;
@@ -282,7 +282,7 @@
   color: #07335E;
   margin-bottom: 5px;
 }
-* main.container div#agregarPersonas div#resumenPersonas h4 {
+* main.container div#agregarPersonas .bloques-reserva h4 {
   font-size: 0.5em;
   text-align: left;
 }
