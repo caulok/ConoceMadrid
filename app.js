@@ -38,7 +38,7 @@ class Persona {
 /* FUNCIONES */
 
 function creadorDeBloquePersonas(){
-    for(i=0 ; i<=personas.length ; i++){
+    for(i=0 ; i<personas.length ; i++){
         let contenedorResumenPersonas = document.createElement("div");
         contenedorResumenPersonas.className = "col-md-auto";
         contenedorResumenPersonas.id = "resumenPersonas";
@@ -66,6 +66,49 @@ function creadorDeBloqueReserva(){
     </div>
     `;
     resumenReserva.appendChild(contenedor);
+}
+
+function agregarReservaStorage(){
+    let reservaJSON = JSON.stringify(reservas);
+    localStorage.setItem("Reserva", reservaJSON);
+}
+
+function borrarStorageYDatos(){
+    let formularioReserva = document.querySelector("#formularioReserva");
+    let botonBorrar = document.createElement("button");
+    botonBorrar.className = "btn btn-outline-danger mt-2";
+    botonBorrar.id = "borrarTodo";
+    botonBorrar.innerText = "Limpiar datos";
+    formularioReserva.appendChild(botonBorrar);
+    
+    botonBorrar.addEventListener('click', ()=> {
+        localStorage.clear();
+
+        for (let i = reservas.length; i > 0; i--) {
+        reservas.pop();
+        }
+        for (let i = paquetes.length; i > 0; i--) {
+        paquetes.pop();
+        }
+        for (let i = personas.length; i > 0; i--) {
+        personas.pop();
+        }
+                
+        let resumenReserva = document.querySelector("#resumenReserva");
+        let resumenDiv = document.querySelector("#resumen");
+        let resumenPersonasDiv = document.querySelector("#resumenPersonas");
+        resumenReserva.removeChild(resumenDiv);
+        resumenReserva.removeChild(resumenPersonasDiv);
+    });
+}
+
+function restablecerBotones(){
+    botonReservaUno.classList.remove("btn-secondary");
+    botonReservaUno.classList.add("btn-primary");
+    botonReservaDos.classList.remove("btn-secondary");
+    botonReservaDos.classList.add("btn-primary");
+    botonReservaTres.classList.remove("btn-secondary");
+    botonReservaTres.classList.add("btn-primary");
 }
 
 /* VARIABLES GLOBALES */
@@ -139,18 +182,12 @@ finalizarReserva.addEventListener('click', ()=> {
     contadorDeReservas++;
     reservas.push(reserva);
 
-    botonReservaUno.classList.remove("btn-secondary");
-    botonReservaUno.classList.add("btn-primary");
-    botonReservaDos.classList.remove("btn-secondary");
-    botonReservaDos.classList.add("btn-primary");
-    botonReservaTres.classList.remove("btn-secondary");
-    botonReservaTres.classList.add("btn-primary");
-
+    restablecerBotones();
     creadorDeBloqueReserva();
     creadorDeBloquePersonas();
-    let reservaJSON = JSON.stringify(reservas)
-    localStorage.setItem("Paquete seleccionado", reservaJSON);
+    agregarReservaStorage();
     console.log(reservas);
 });
+borrarStorageYDatos();
 
 

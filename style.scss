@@ -224,7 +224,7 @@
             }
         }
         // FIN DEL MAIN DESTINOS
-        // COMIENZO DEL MAIN VIAJES
+        // COMIENZO DEL MAIN HOSPEDAJE
         #contenedor {
             padding-top: 30px;
 
@@ -281,6 +281,10 @@
             justify-content: space-evenly;
             margin-bottom: 50px;
             padding-bottom: 50px;
+
+            #borrarTodo{
+                width: 100%;
+            }
 
             h3 {
                 margin-bottom: 1em;
@@ -482,4 +486,3 @@
     }
 }
 /* ------------------------------------------------- FIN DE GENERALES */
-
