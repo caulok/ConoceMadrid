@@ -88,10 +88,8 @@ function borrarStorageYDatos(){
         paquetes = [];
         personas = [];
                 
-        let resumenReserva = document.querySelector("#resumenReserva");
-        let bloquesReserva = document.querySelector(".bloques-reserva")
-        let encontrarBloques = document.body.contains(bloquesReserva);  
-        resumenReserva.remove(encontrarBloques)
+        let bloquesReserva = document.querySelector(".bloques-reserva");
+        resumenReserva.removeChild(bloquesReserva);
     });
 }
 
