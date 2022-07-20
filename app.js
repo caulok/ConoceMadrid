@@ -2,9 +2,6 @@
 
     Una reserva que está compuesta de 1 paquete y personas. Los usuarios pueden elegir cualquiera de los 3 paquetes (Madrid, Toledo y Aranjuez). Cada uno definido en una fecha determinada y una cantidad de días establecidos. Luego el objetivo es mostrar un resumen de la reserva.*/
 
-
-
-
 /* CLASES */
 
 class Reserva {
@@ -36,6 +33,26 @@ class Persona {
 }
 
 /* FUNCIONES */
+
+function validarString(){
+    swal({
+        title: "Has colocado números",
+        text: "Por favor ingresa los datos nuevamente",
+        icon: "error",
+      });
+    formulario.reset()
+    personas.push();
+}
+
+function formularioSuccess(){
+    swal({
+        icon: "success",
+        text: "¡Agregaste una persona!",
+        button: false,
+        timer: 1800
+    });
+    formulario.reset();
+}
 
 function creadorDeBloquePersonas(){
     for(i=0 ; i<personas.length ; i++){
@@ -91,6 +108,7 @@ function borrarStorageYDatos(){
         let bloquesReserva = document.querySelector(".bloques-reserva");
         let encontrarClase = document.contains(bloquesReserva);
         resumenReserva.remove(encontrarClase);
+        location.reload()
     });
 }
 
@@ -148,21 +166,17 @@ let nacionalidadInput = document.querySelector("#nacionalidadInput");
 formulario.onsubmit = (event) => validarFormulario(event);
 function validarFormulario(event){
     event.preventDefault();
-    id = contadorPersonas++;
+    idPersona = contadorPersonas++;
     nombre = nombreInput.value;
     apellido = apellidoInput.value;
     pasaporte = pasaporteInput.value;
     nacionalidad = nacionalidadInput.value;
 
-    let persona = new Persona(id, nombre, apellido, pasaporte, nacionalidad);
-    personas.push(persona);
-    swal({
-        icon: "success",
-        text: "¡Agregaste una persona!",
-        button: false,
-        timer: 1800
-    });
-    formulario.reset();
+    let persona = new Persona(idPersona, nombre, apellido, pasaporte, nacionalidad);
+    (isNaN(nombre) && true)? 
+    (isNaN(apellido) && true) ? 
+    (isNaN(nacionalidad) && true) ? 
+    (formularioSuccess(), personas.push(persona)) : (validarString()) : (validarString()) : (validarString());  
 }
 
 /* Reserva */
@@ -181,5 +195,6 @@ finalizarReserva.addEventListener('click', ()=> {
     console.log(reservas);
 });
 borrarStorageYDatos();
+
 
 
