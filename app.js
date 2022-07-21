@@ -54,6 +54,37 @@ function formularioSuccess(){
     formulario.reset();
 }
 
+function alertaBorrar(){
+    swal({
+        title: "¿Deseas limpiar los datos?",
+        text: "Una vez que se limpian los mismos, no podrás obtenerlos nuevamente",
+        icon: "warning",
+        buttons: true,
+        buttons: ["Cancelar", "OK"],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            swal("Tus datos fueron eliminados.", {
+              icon: "success",
+            });
+            localStorage.clear();
+            reservas = [];
+            paquetes = [];
+            personas = [];
+                  
+            let bloquesReserva = document.querySelector(".bloques-reserva");
+            let encontrarClase = document.contains(bloquesReserva);
+            resumenReserva.remove(encontrarClase);
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        } else {
+            swal("Tus datos están a salvo");
+        }
+      });
+}
+
 function creadorDeBloquePersonas(){
     for(i=0 ; i<personas.length ; i++){
         let contenedorResumenPersonas = document.createElement("div");
@@ -99,16 +130,7 @@ function borrarStorageYDatos(){
     formularioReserva.appendChild(botonBorrar);
     
     botonBorrar.addEventListener('click', ()=> {
-        localStorage.clear();
-
-        reservas = [];
-        paquetes = [];
-        personas = [];
-                
-        let bloquesReserva = document.querySelector(".bloques-reserva");
-        let encontrarClase = document.contains(bloquesReserva);
-        resumenReserva.remove(encontrarClase);
-        location.reload()
+        alertaBorrar();
     });
 }
 
