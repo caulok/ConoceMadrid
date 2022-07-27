@@ -23,12 +23,12 @@
 }
 * header a.navbar-brand {
   font-weight: bold;
-  margin-left: 60px;
   color: #1961AB;
   font-size: 25px;
+  margin-left: 30px;
 }
 * header form.d-flex {
-  margin-right: 60px;
+  margin-right: 30px;
 }
 * header form.d-flex .form-control.me-2 {
   border: none;
@@ -225,6 +225,7 @@
 }
 * main.container #contenedor .row .card:hover {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
 }
 * main.container #contenedor .row .card img.card-img-top {
   width: auto;
@@ -245,14 +246,37 @@
 * main.container #contenedor .row .card .card-body h5 {
   text-align: center;
   font-size: 1.5em;
-  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+* main.container #contenedor .row .card .card-body .services {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 2em;
+}
+* main.container #contenedor .row .card .card-body .services i {
+  padding: 0 5px;
+  font-size: 0.8em;
+}
+* main.container #contenedor .row .card .card-body .stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+* main.container #contenedor .row .card .card-body .stars i {
+  padding: 0 2px;
 }
 * main.container #contenedor .row .card .card-body p.card-text.precio {
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-weight: bold;
   border-top: 1px dashed gray;
   padding-top: 5px;
   text-align: center;
+  margin-bottom: 0;
+}
+* main.container #contenedor .row .card .card-body .note {
+  text-align: center;
+  font-size: 0.8em;
 }
 * main.container #contenedor .row .card .card-body .btn {
   width: 100%;
@@ -343,6 +367,10 @@
 * footer .col-md-4 ul li a, * footer .col-xs-12 ul li a {
   text-decoration: none;
   color: white;
+  transition: 0.5s;
+}
+* footer .col-md-4 ul li a:hover, * footer .col-xs-12 ul li a:hover {
+  opacity: 0.5;
 }
 * footer #footer-col2 {
   color: white;
@@ -425,12 +453,37 @@
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  * .navbar-toggler {
+    margin-right: 10px;
+  }
+  * form.d-flex {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  * header li.nav-item {
+    padding: 0;
+  }
+}
 @media (max-width: 425px) {
   * div#\#card {
-    width: 45%;
+    width: 45% !important;
     margin-top: 25px;
-    margin-bottom: 0;
-    height: 150px;
+    margin-bottom: 0 !important;
+    height: 150px !important;
+  }
+  * .card {
+    margin-bottom: 2em;
+  }
+  * #formularioReserva {
+    width: 90%;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+  }
+  * #resumenReserva {
+    width: 90%;
+    margin: auto;
   }
 }
 

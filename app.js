@@ -75,6 +75,15 @@ function weatherAranjuez(){
     });
 }
 
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.history.replaceState({
+        foo: 'bar'
+    }, '', '#');
+    
+  }
+
 function validarString(){
     swal({
         title: "Has colocado números",
@@ -120,6 +129,7 @@ function alertaBorrar(){
             setTimeout(() => {
                 location.reload();
             }, 3000);
+            topFunction();
         } else {
             swal("Tus datos están a salvo");
         }
