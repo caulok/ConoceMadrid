@@ -252,13 +252,24 @@
                         width: auto;
                         height: 150px;
                         object-fit: cover;
+                        border-radius: 0;
+                    }
+                    .weather {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .weatherText {
+                        display: inline;
+                        padding-right: 15px;
+                        font-size: 0.75em;
                     }
 
                     .card-body{
+
                         h5{
                             text-align: center;
                             font-size: 1.5em;
-                            margin-bottom: 1em;
                             font-weight: bold;
                         }
 

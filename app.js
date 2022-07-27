@@ -34,6 +34,47 @@ class Persona {
 
 /* FUNCIONES */
 
+async function weatherMadrid(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.416667&lon=-3.7025&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    .then((response) => response.json())
+    .then((data) => {
+        let weatherMadrid = document.querySelector("#weatherMadrid");
+        let tiempoMadrid = document.createElement("div");
+        tiempoMadrid.innerHTML = `
+            <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+            <p class="weatherText">Temp. <strong>${data.main.temp}°C</strong> | S.T. <strong>${data.main.feels_like}°C</strong></p>
+        `;
+        weatherMadrid.appendChild(tiempoMadrid)
+        console.log(data)
+    });
+}
+function weatherToledo(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=39.866667&lon=-4.033333&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    .then((response) => response.json())
+    .then((data) => {
+        let weatherToledo = document.querySelector("#weatherToledo");
+        let tiempoToledo = document.createElement("div");
+        tiempoToledo.innerHTML = `
+            <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+            <p class="weatherText">Temp. <strong>${(data.main.temp)}°C</strong> | S.T. <strong>${data.main.feels_like}°C</strong></p>
+        `;
+        weatherToledo.appendChild(tiempoToledo)
+    });
+}
+function weatherAranjuez(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.033333&lon=-3.602778&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    .then((response) => response.json())
+    .then((data) => {
+        let weatherAranjuez = document.querySelector("#weatherAranjuez");
+        let tiempoAranjuez = document.createElement("div");
+        tiempoAranjuez.innerHTML = `
+            <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+            <p class="weatherText">Temp. <strong>${data.main.temp}°C</strong> | S.T. <strong>${data.main.feels_like}°C</strong></p>
+        `;
+        weatherAranjuez.appendChild(tiempoAranjuez)
+    });
+}
+
 function validarString(){
     swal({
         title: "Has colocado números",
@@ -217,6 +258,12 @@ finalizarReserva.addEventListener('click', ()=> {
     console.log(reservas);
 });
 borrarStorageYDatos();
+weatherMadrid();
+weatherToledo();
+weatherAranjuez();
 
-
-
+/*API DEL TIEMPO:
+https://rapidapi.com/community/api/open-weather-map/ 
+API ID= febd1d10e2d2b632346ff9a61e7d5d5b
+CURRENT WEATHER: https://openweathermap.org/current
+*/
