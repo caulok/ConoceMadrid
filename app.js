@@ -35,7 +35,7 @@ class Persona {
 /* FUNCIONES */
 
 async function weatherMadrid(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.416667&lon=-3.7025&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.416667&lon=-3.7025&appid=c1be562ef1e96a1d0a255a314911359d&units=metric&lang=es')
     .then((response) => response.json())
     .then((data) => {
         let weatherMadrid = document.querySelector("#weatherMadrid");
@@ -49,7 +49,7 @@ async function weatherMadrid(){
     });
 }
 function weatherToledo(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=39.866667&lon=-4.033333&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=39.866667&lon=-4.033333&appid=c1be562ef1e96a1d0a255a314911359d&units=metric&lang=es')
     .then((response) => response.json())
     .then((data) => {
         let weatherToledo = document.querySelector("#weatherToledo");
@@ -62,7 +62,7 @@ function weatherToledo(){
     });
 }
 function weatherAranjuez(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.033333&lon=-3.602778&appid=febd1d10e2d2b632346ff9a61e7d5d5b&units=metric&lang=es')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.033333&lon=-3.602778&appid=c1be562ef1e96a1d0a255a314911359d&units=metric&lang=es')
     .then((response) => response.json())
     .then((data) => {
         let weatherAranjuez = document.querySelector("#weatherAranjuez");
@@ -261,9 +261,3 @@ borrarStorageYDatos();
 weatherMadrid();
 weatherToledo();
 weatherAranjuez();
-
-/*API DEL TIEMPO:
-https://rapidapi.com/community/api/open-weather-map/ 
-API ID= febd1d10e2d2b632346ff9a61e7d5d5b
-CURRENT WEATHER: https://openweathermap.org/current
-*/
