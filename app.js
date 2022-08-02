@@ -19,12 +19,12 @@ class Paquete {
     }
 }
 class Persona {
-    constructor(id, nombre, apellido, pasaporte, nacionalidad) {
+    constructor(id, nombre, apellido, pasaporte, pais) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.pasaporte = pasaporte;
-        this.nacionalidad = nacionalidad;
+        this.pais = pais;
     }
 }
 
@@ -123,6 +123,16 @@ function formularioSuccess() {
     formulario.reset();
 }
 
+function reservaSuccess() {
+    swal({
+        icon: "success",
+        title: "Finalizaste tu reserva",
+        text: "¡Que tengas una gran estadía!",
+        button: false,
+        timer: 2500
+    });
+}
+
 function alertaBorrar() {
     swal({
         title: "¿Deseas limpiar los datos?",
@@ -163,7 +173,7 @@ function creadorDeBloquePersonas() {
             <h4>Persona: <strong>${i + 1}</strong></h4>
             <h4>Nombre completo: <strong>${reservas[0].persona[i].nombre.toUpperCase()} ${reservas[0].persona[i].apellido.toUpperCase()}</strong></h4>
             <h4>Pasaporte: <strong>${reservas[0].persona[i].pasaporte.toUpperCase()}</strong></h4>
-            <h4>Nacionalidad: <strong>${reservas[0].persona[i].nacionalidad.toUpperCase()}</strong></h4>
+            <h4>País: <strong>${reservas[0].persona[i].pais.toUpperCase()}</strong></h4>
         </div>
         `;
         resumenReserva.appendChild(contenedorResumenPersonas);
@@ -202,6 +212,15 @@ function borrarStorageYDatos() {
     });
 }
 
+function desactivarBotones(){
+    finalizarReserva.classList.add("disabled");
+    formulario.classList.add("disabled");
+    botonAgregar.classList.add("disabled");
+    botonReservaUno.classList.add("disabled");
+    botonReservaDos.classList.add("disabled");
+    botonReservaTres.classList.add("disabled");
+}
+
 function restablecerBotones() {
     botonReservaUno.classList.remove("btn-secondary");
     botonReservaUno.classList.add("btn-primary");
@@ -227,6 +246,7 @@ let contadorHoteles = 0;
 botonReservaUno = document.querySelector("#boton-reserva1");
 botonReservaDos = document.querySelector("#boton-reserva2");
 botonReservaTres = document.querySelector("#boton-reserva3");
+botonAgregar = document.querySelector("#btnAgregar");
 
 
 botonReservaUno.addEventListener('click', () => {
@@ -260,23 +280,26 @@ let nombreInput = document.querySelector("#nombreInput");
 let apellidoInput = document.querySelector("#apellidoInput");
 let pasaporteInput = document.querySelector("#pasaporteInput");
 let nacionalidadInput = document.querySelector("#nacionalidadInput");
+let paisesLista = document.querySelector("#paises");    
+
+
 
 formulario.onsubmit = (event) => validarFormulario(event);
 function validarFormulario(event) {
     event.preventDefault();
+    
     idPersona = contadorPersonas++;
     nombre = nombreInput.value;
     apellido = apellidoInput.value;
     pasaporte = pasaporteInput.value;
-    nacionalidad = nacionalidadInput.value;
+    pais = paisesLista.value;
 
-    let persona = new Persona(idPersona, nombre, apellido, pasaporte, nacionalidad);
+    let persona = new Persona(idPersona, nombre, apellido, pasaporte, pais);
     (isNaN(nombre) && true) ?
         (isNaN(apellido) && true) ?
-            (isNaN(nacionalidad) && true) ?
                 (clicked && true) ?
                     (contadorHoteles === 1) ?
-                        (formularioSuccess(), personas.push(persona)) : (validarCantidadHotel()) : (validarSeleccionHotel()) :(validarString()) : (validarString()) : (validarString());
+                        (formularioSuccess(), personas.push(persona)) : (validarCantidadHotel()) : (validarSeleccionHotel()) : (validarString()) : (validarString());
 }
 
 /* Reserva */
@@ -287,10 +310,11 @@ finalizarReserva.addEventListener('click', () => {
     let reserva = new Reserva(contadorDeReservas, Date(), paquetes, personas);
     contadorDeReservas++;
     reservas.push(reserva);
-    restablecerBotones();
+    reservaSuccess();
     creadorDeBloqueReserva();
     creadorDeBloquePersonas();
     agregarReservaStorage();
+    desactivarBotones();
 });
 main();
 

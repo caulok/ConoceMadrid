@@ -317,6 +317,11 @@
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
+* main.container div#agregarPersonas .form-select {
+  padding: 1em 0.75em;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
 * main.container div#agregarPersonas #borrarTodo {
   width: 100%;
 }
